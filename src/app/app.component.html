@@ -1,15 +1,78 @@
+<!-- Interpolation (TS to Html with built in pipes for formatting)-->
+
 <h1> {{title | uppercase}}</h1>
 
-<h2> {{date | date: "mm/dd/yyyy"}} </h2>
+<h2> {{date | date: "MM/dd/yyyy"}} </h2>
 <h2> {{price | currency}}</h2>
 
 <hr>
 
-<img [src] = "imageUrl"/>
+<!-- Property Binding-->
+<img [src] = "imageUrl" [width]="widthUrl"/>
 
+
+<!-- Builtin and Custom pipe-->
 <span>
     Selling price: {{price | currency}}
     Profit: {{price | profit: 10 | currency}}
 </span>
 
+<hr>
+<!-- Attribute binding (button)-->
+<button type = "button" [attr.aria-label] = "attributeValue"> 
+    BUTTON
+</button>
+
+<hr>
+<!-- CSS and Styles with multiple and singular colors-->
+
+<p [class] = "colors">
+    classes with multiple colors
+</p>
+
+<p [style] = "styles">
+    styles with multiple colors
+</p>
+
+<p [style.background-color] = "backgroundColor">
+   style with a singular color
+</p>
+
+<hr>
+
+<!-- Button with Event Binding-->
+<button (click)="setTimeToNow()">
+    Set time to now please uwu
+</button>
+
+<!-- Pinapalitaw sa HTML galing button (Interpolation)-->
+<p>
+    Please set time now: {{timeNow}}
+</p>
+
+<hr>
+<!--Template Variable-->
+
+<input #textColor placeholder="type mo color mo">
+<button (click)="setTextColor(textColor.value)">
+    Set color please uwu
+</button>
+
+<p [style.color] = 'color'>
+    Frank Ocean!!!!
+</p>
+
+<hr>
+
+<!-- Two way data binding-->
+
+
+<input [(ngModel)] = "fullName">
+<p>
+    {{fullName}}
+</p>
+
 <app-details></app-details>
+
+
+
