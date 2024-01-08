@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'movies-app';
+
+  imageUrl = "https://dotnetnow.net/images/movies/movie-1.jpeg";
+
+  title = 'UMAY LODICAKES';
+
+  date = new Date();
+
+  price = 100;
 }
